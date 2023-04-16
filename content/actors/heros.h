@@ -12,14 +12,17 @@ const std::unordered_map<std::string, Reaction> key_bindings = {
      []() {
          return std::make_unique<Move>(Vec{-1, 0});
      }},  // a -> left
+
     {"D",
      []() {
          return std::make_unique<Move>(Vec{1, 0});
      }},  // d -> right
+
     {"W",
      []() {
          return std::make_unique<Move>(Vec{0, 1});
      }},  // w -> up
+
     {"S",
      []() {
          return std::make_unique<Move>(Vec{0, -1});
