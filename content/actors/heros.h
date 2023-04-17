@@ -3,6 +3,7 @@
 #include "herotype.h"
 #include "move.h"
 #include "none.h"
+#include "rest.h"
 
 namespace Heros {
 
@@ -26,8 +27,8 @@ const std::unordered_map<std::string, Reaction> key_bindings = {
     {"S",
      []() {
          return std::make_unique<Move>(Vec{0, -1});
-     }}  // s -> down
-    // {"R", []() { return std::make_unique<Rest>; }}  // r -> rest
+     }},                                              // s -> down
+    {"R", []() { return std::make_unique<Rest>(); }}  // r -> rest
 };
 
 constexpr int default_speed{8};
