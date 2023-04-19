@@ -36,31 +36,31 @@ Monsters
             return alternative(Rest{})
 
 ## Moving
-    Vec
-        (x, y) tile loation.
-        (0, 0) is bottom-left
-        operator + and - goes up and right or down and left
-        new_position = position {x, y} + direction {0, 1}
-    Actor
-        public member function
-    Tiles
-        Tile& tile = engine.dungeon.tiles(position)
-    Tile
-        is_wall(), bool walkable, Actor* actor
-    Keybinding
-        in struct HeroType --> std::unordered_mapp<std::string, Reaction> key_bindings;
+-Vec
+    (x, y) tile loation.
+    (0, 0) is bottom-left
+    operator + and - goes up and right or down and left
+    new_position = position {x, y} + direction {0, 1}
+-Actor
+    public member function
+-Tiles
+    Tile& tile = engine.dungeon.tiles(position)
+-Tile
+    is_wall(), bool walkable, Actor* actor
+-Keybinding
+    in struct HeroType --> std::unordered_mapp<std::string, Reaction> key_bindings;
 
 ```C++
-        std::unordered_map<std::string, int> contacts = {
-            {"name", value},
-            {"name", value},
-        }
-        using Reaction = std::function<std::unique_ptr<Action>()>
+std::unordered_map<std::string, int> contacts = {
+    {"name", value},
+    {"name", value},
+}
+using Reaction = std::function<std::unique_ptr<Action>()>
 
-        std::function<int(int,int)> func_onj = add;
-        //  return type^  ^args^
-        or = [](intx, int y) {return x + y;}
-        // [] is a function
+std::function<int(int,int)> func_onj = add;
+//  return type^  ^args^
+or = [](intx, int y) {return x + y;}
+// [] is a function
 ```
 
 
@@ -70,4 +70,18 @@ void change_direction(Vec);
 void move_to(Vec);
 Vec get_position();
 ```
+
+## Door
+Move to the door position (tile)
+find out that it is a door
+return alternative(open_door(vec{position}))
+
+```C++
+OpenDoor(Vec position)
+    // can get tile and door from position
+OpenDoor(Door, Tile) //< too much info. Not its job
+```
+Change the lighting after opening the door
+
+Closing - search the surrounding tiles (4)
 
