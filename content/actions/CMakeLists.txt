@@ -1,6 +1,7 @@
 add_library(actions
   rest.cpp
   move.cpp
+  opendoor.cpp
   closedoor.cpp
   )
 
