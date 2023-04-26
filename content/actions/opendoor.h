@@ -3,10 +3,11 @@
 #include "action.h"
 #include "vec.h"
 
-class Move : public Action {
+class OpenDoor : public Action {
 public:
-    Move(Vec direction);
+    OpenDoor(Vec position);
     Result perform(Engine& engine) override;
 
-    Vec direction;
+private:
+    Vec position;
 };
