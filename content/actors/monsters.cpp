@@ -1,12 +1,30 @@
 #include "monsters.h"
 
+#include "engine.h"
+#include "monster.h"
+#include "move.h"
 #include "none.h"
+#include "randomness.h"
 #include "rest.h"
+#include "wander.h"
 
 namespace Monsters {
 
 std::unique_ptr<Action> default_behavior(Engine& engine, Monster& m) {
-    return std::make_unique<Rest>();
+    if (m.is_visible() && engine.hero) {
+        std::vector<Vec> path = engine.dungeon.calculate_path(
+            m.get_position(), engine.hero->get_position());
+        if (path.size() > 1) {
+            Vec direction = path.at(1) - path.at(0);
+            return std::make_unique<Move>(-1 * direction);
+        }
+    }
+
+    if (probability(33)) {
+        return std::make_unique<Wander>();
+    } else {
+        return std::make_unique<Rest>();
+    }
 }
 
 constexpr int default_speed{8};
