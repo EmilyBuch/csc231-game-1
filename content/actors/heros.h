@@ -1,6 +1,7 @@
 #pragma once
 
 #include "closedoor.h"
+#include "hammer.h"
 #include "herotype.h"
 #include "move.h"
 #include "none.h"
@@ -33,7 +34,7 @@ const std::unordered_map<std::string, Reaction> key_bindings = {
     {"Space", []() { return std::make_unique<CloseDoor>(); }}};
 
 constexpr int default_speed{8};
-const HeroType nobody{"dragon", default_speed, 1, std::make_shared<None>(),
+const HeroType nobody{"dragon", default_speed, 1, std::make_shared<Hammer>(8),
                       key_bindings};
 
 }  // namespace Heros

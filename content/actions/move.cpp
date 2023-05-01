@@ -20,7 +20,10 @@ Result Move::perform(Engine& engine) {
     }
 
     if (tile.actor) {
-        return alternative(Rest{});
+        // check team
+        // if not the same team, attack
+        return alternative(Attack{*tile.actor});
+        // if same team, return alternative rest
     }
 
     if (tile.is_door()) {
