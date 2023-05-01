@@ -16,7 +16,7 @@ std::unique_ptr<Action> default_behavior(Engine& engine, Monster& m) {
             m.get_position(), engine.hero->get_position());
         if (path.size() > 1) {
             Vec direction = path.at(1) - path.at(0);
-            return std::make_unique<Move>(-1 * direction);
+            return std::make_unique<Move>(direction);
         }
     }
 
