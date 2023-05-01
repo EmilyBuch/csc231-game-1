@@ -85,3 +85,18 @@ Change the lighting after opening the door
 
 Closing - search the surrounding tiles (4)
 
+## Weapons
+```C++
+Weapons::use (Engine& engine, Actor& attacker, Actor& defender)
+```
+Weapons can be for a selection of spaces based on the actor
+Weapons need a damage amount
+Need animation(s)
+Allows Weapons to vary (including hurting yourself, game ending, teleporting)
+
+## Attack
+Hit event -> the rest of the game processes
+```C++
+defender.take_damage(amount)
+```
+This amount is for each Weapon
