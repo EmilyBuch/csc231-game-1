@@ -33,10 +33,6 @@ const std::unordered_map<std::string, Reaction> key_bindings = {
      }},                                               // s -> down
     {"R", []() { return std::make_unique<Rest>(); }},  // r -> rest
     {"Space", []() { return std::make_unique<CloseDoor>(); }},
-    // {"Left", []() { return std::make_unique<Hit>(); }},
-    // {"Right", []() {return std::make_unique<Hit>();}},
-    // {"Up", []() {return std::make_unique<Hit>();}},
-    // {"Down", []() {return std::make_unique<Hit>():}},
 };
 
 constexpr int default_speed{8};
