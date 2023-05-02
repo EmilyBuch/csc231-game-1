@@ -2,8 +2,8 @@
 
 #include "weapon.h"
 
-class Hammer : public Weapon {
+class Knife : public Weapon {
 public:
-    Hammer(int damage);
+    Knife(int damage);
     void use(Engine& engine, Actor& attacker, Actor& defender) override;
 };
