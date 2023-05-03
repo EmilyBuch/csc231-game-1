@@ -7,13 +7,13 @@ int main() {
     Settings settings = read_settings(filename);
     Engine engine{settings};
 
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < 10; ++i) {
         engine.create_monster(Monsters::goblin());
     }
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < 10; ++i) {
         engine.create_monster(Monsters::demon_tiny());
     }
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < 10; ++i) {
         engine.create_monster(Monsters::skeleton());
     }
 
