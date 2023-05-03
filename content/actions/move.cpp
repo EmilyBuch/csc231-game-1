@@ -16,14 +16,16 @@ Result Move::perform(Engine& engine) {
 
     Tile& tile = engine.dungeon.tiles(position);
     if (tile.is_wall()) {
-        return alternative(Rest{});
+        return failure();
     }
 
-    if (tile.actor) {
-        // check team
-        // if not the same team, attack
-        return alternative(Attack{*tile.actor});
-        // if same team, return alternative rest
+    Actor* defender = engine.dungeon.tiles(position).actor;
+    if (defender != nullptr) {
+        if (actor->team == defender->team) {
+            return alternative(Rest{});
+        } else {
+            return alternative(Attack{*defender});
+        }
     }
 
     if (tile.is_door()) {
