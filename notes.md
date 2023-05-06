@@ -100,3 +100,9 @@ Hit event -> the rest of the game processes
 defender.take_damage(amount)
 ```
 This amount is for each Weapon
+
+
+## Angles
+direction angle: atan2(y, x)
+sprite angle = -1 * (direction angle) + 90
+
