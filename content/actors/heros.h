@@ -4,6 +4,7 @@
 #include "hammer.h"
 #include "herotype.h"
 #include "hit.h"
+#include "knife.h"
 #include "move.h"
 #include "none.h"
 #include "rest.h"
