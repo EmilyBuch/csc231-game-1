@@ -19,6 +19,9 @@ Result Move::perform(Engine& engine) {
         return failure();
     }
 
+    // Nikolai tried helping me.
+    // The logic he explained made sense
+    // If you think I should do it differently, let me know
     Actor* defender = engine.dungeon.tiles(position).actor;
     if (defender != nullptr) {
         if (actor->team == defender->team) {
