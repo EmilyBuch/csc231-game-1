@@ -103,6 +103,20 @@ This amount is for each Weapon
 
 
 ## Angles
-direction angle: atan2(y, x)
+direction angle = atan2(y, x) \\atan2 = arctan()
 sprite angle = -1 * (direction angle) + 90
+
+## Animations
+```C++
+void Swing::execute(Engine&) {
+    sprite.angle -= -15;
+    sprite.shift += direction * 5;
+    sprite.angle += 90;
+}
+
+void Swing::when_done(Engine& engine) {
+    engine.events.add(Hit{defender, damage});
+    sprite = original;
+}
+```
 
