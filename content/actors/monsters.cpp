@@ -50,4 +50,10 @@ MonsterType demon_tiny() {
             default_behavior};
 }
 
+// MonsterType heart() {
+//     int health = 1;
+//     return {"heart", 0, health, std::make_shared<None>(),
+//             std::make_unique<Rest>()};
+// }
+
 }  // namespace Monsters
