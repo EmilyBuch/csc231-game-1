@@ -106,4 +106,17 @@ This amount is for each Weapon
 direction angle = atan2(y, x) \\atan2 = arctan()
 sprite angle = -1 * (direction angle) + 90
 
+## Ideas for Final
+- Healing with randomly spawning hearts
+- figure out how to do animation
 
+## Things to do to complete the game
+- change hero's health (lower)
+- mess with the spawn rate of monsters
+- maybe add a few large monsters
+- add the final addition
+
+modify engine and add a heart "monster"
+    default behavior Rest
+    default weapon None
+in move, check team. If heart, action heal
