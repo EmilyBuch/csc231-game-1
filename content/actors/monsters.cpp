@@ -9,6 +9,7 @@
 #include "none.h"
 #include "randomness.h"
 #include "rest.h"
+#include "staff.h"
 #include "wander.h"
 
 namespace Monsters {
@@ -34,7 +35,7 @@ constexpr int default_speed{8};
 
 MonsterType goblin() {
     int health = 2;
-    return {"goblin", default_speed, health, std::make_shared<Knife>(1),
+    return {"goblin", default_speed, health, std::make_shared<Staff>(3),
             default_behavior};
 }
 
