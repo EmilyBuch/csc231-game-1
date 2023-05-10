@@ -38,6 +38,15 @@ Result Move::perform(Engine& engine) {
         }
     }
 
+    /*
+        if (tile.is_heart()) {
+            actor->move_to(position);
+            return alternative(Heal{});
+
+        }
+
+    */
+
     actor->move_to(position);
 
     return success();
