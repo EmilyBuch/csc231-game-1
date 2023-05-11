@@ -21,3 +21,5 @@ necromancer 368 268 16 20 4
 demon_tiny 368 48 16 16 4
 demon 368 328 16 24 4
 demon_big  16 364 32 36 4
+
+heart_full 288 256 16 16

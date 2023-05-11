@@ -10,6 +10,6 @@ std::unique_ptr<Action> default_behavior(Engine& engine, Monster& m);
 MonsterType goblin();
 MonsterType skeleton();
 MonsterType demon_tiny();
-MonsterType heart();
+MonsterType heart_full();
 
 }  // namespace Monsters
