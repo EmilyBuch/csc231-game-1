@@ -5,6 +5,7 @@
 #include "actor.h"
 #include "attack.h"
 #include "engine.h"
+#include "heal.h"
 #include "opendoor.h"
 #include "rest.h"
 
@@ -19,9 +20,6 @@ Result Move::perform(Engine& engine) {
         return failure();
     }
 
-    // Nikolai tried helping me.
-    // The logic he explained made sense
-    // If you think I should do it differently, let me know
     Actor* defender = engine.dungeon.tiles(position).actor;
     if (defender != nullptr) {
         if (actor->team == defender->team) {
@@ -38,14 +36,10 @@ Result Move::perform(Engine& engine) {
         }
     }
 
-    /*
-        if (tile.is_heart()) {
-            actor->move_to(position);
-            return alternative(Heal{});
-
-        }
-
-    */
+    if (engine.dungeon.tiles(position).actor->team == 3) {
+        actor->move_to(position);
+        return alternative(Heal{});
+    }
 
     actor->move_to(position);
 

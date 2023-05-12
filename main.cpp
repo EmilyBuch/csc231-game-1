@@ -16,9 +16,9 @@ int main() {
     for (int i = 0; i < 10; ++i) {
         engine.create_monster(Monsters::skeleton());
     }
-    // for (int i = 0; i < 5; ++i) {
-    //     engine.create_monster(Monsters::heart());
-    // }
+    for (int i = 0; i < 5; ++i) {
+        engine.create_monster(Monsters::heart_full());
+    }
 
     engine.create_hero(Heros::dragon);
     engine.run();
