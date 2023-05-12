@@ -22,7 +22,11 @@ Result Move::perform(Engine& engine) {
 
     Actor* defender = engine.dungeon.tiles(position).actor;
     if (defender != nullptr) {
-        if (actor->team == defender->team) {
+        if (defender->team == 3) {
+            actor->move_to(position);
+            // defender --health;
+            return alternative(Heal{});
+        } else if (actor->team == defender->team) {
             return alternative(Rest{});
         } else {
             return alternative(Attack{*defender});
@@ -34,11 +38,6 @@ Result Move::perform(Engine& engine) {
         if (!door.is_open()) {
             return alternative(OpenDoor{position});
         }
-    }
-
-    if (engine.dungeon.tiles(position).actor->team == 3) {
-        actor->move_to(position);
-        return alternative(Heal{});
     }
 
     actor->move_to(position);
