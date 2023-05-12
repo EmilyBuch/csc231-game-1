@@ -6,7 +6,7 @@
 namespace Monsters {
 
 std::unique_ptr<Action> default_behavior(Engine& engine, Monster& m);
-std::unique_ptr<Action> tired(Engine&, Monster&);
+std::unique_ptr<Action> exist(Engine&, Monster&);
 
 MonsterType goblin();
 MonsterType skeleton();

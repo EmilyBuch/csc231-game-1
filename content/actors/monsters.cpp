@@ -31,7 +31,7 @@ std::unique_ptr<Action> default_behavior(Engine& engine, Monster& m) {
     }
 }
 
-std::unique_ptr<Action> tired(Engine&, Monster&) {
+std::unique_ptr<Action> exist(Engine&, Monster&) {
     return std::make_unique<Rest>();
 }
 
@@ -56,7 +56,7 @@ MonsterType demon_tiny() {
 }
 
 MonsterType heart_full() {
-    return {"heart_full", 0, 1, std::make_shared<None>(), tired};
+    return {"heart_full", 0, 1, std::make_shared<None>(), exist};
 }
 
 }  // namespace Monsters
