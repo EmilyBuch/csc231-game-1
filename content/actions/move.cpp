@@ -23,8 +23,9 @@ Result Move::perform(Engine& engine) {
     Actor* defender = engine.dungeon.tiles(position).actor;
     if (defender != nullptr) {
         if (defender->team == 3) {
+            defender->alive = false;
+            engine.dungeon.remove_actor(defender->get_position());
             actor->move_to(position);
-            // defender --health;
             return alternative(Heal{});
         } else if (actor->team == defender->team) {
             return alternative(Rest{});
