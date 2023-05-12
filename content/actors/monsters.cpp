@@ -31,6 +31,10 @@ std::unique_ptr<Action> default_behavior(Engine& engine, Monster& m) {
     }
 }
 
+std::unique_ptr<Action> tired(Engine&, Monster&) {
+    return std::make_unique<Rest>();
+}
+
 constexpr int default_speed{8};
 
 MonsterType goblin() {
@@ -51,10 +55,8 @@ MonsterType demon_tiny() {
             default_behavior};
 }
 
-// MonsterType heart() {
-//     int health = 1;
-//     return {"heart", 0, health, std::make_shared<None>(),
-//             std::make_unique<Rest>()};
-// }
+MonsterType heart_full() {
+    return {"heart_full", 0, 1, std::make_shared<None>(), tired};
+}
 
 }  // namespace Monsters
