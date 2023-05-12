@@ -113,7 +113,6 @@ sprite angle = -1 * (direction angle) + 90
 ## Things to do to complete the game
 - change hero's health (lower)
 - mess with the spawn rate of monsters
-- maybe add a few large monsters
 - add the final addition
 
 modify engine and add a heart "monster"
