@@ -16,7 +16,7 @@ int main() {
     for (int i = 0; i < 10; ++i) {
         engine.create_monster(Monsters::skeleton());
     }
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < 15; ++i) {
         engine.create_monster(Monsters::heart_full());
     }
 

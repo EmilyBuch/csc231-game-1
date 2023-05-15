@@ -37,7 +37,7 @@ const std::unordered_map<std::string, Reaction> key_bindings = {
 };
 
 constexpr int default_speed{8};
-const HeroType dragon{"dragon", default_speed, 100, std::make_shared<Hammer>(8),
+const HeroType dragon{"dragon", default_speed, 10, std::make_shared<Hammer>(8),
                       key_bindings};
 
 }  // namespace Heros
