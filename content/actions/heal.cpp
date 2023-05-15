@@ -5,7 +5,6 @@
 constexpr int TEAM_HEART = 3;
 
 Heal::Heal() {}
-// Heal::Heal() : Actor{Engine & engine, this->position, 1, 3, 0} {}
 
 Result Heal::perform(Engine&) {
     int max = actor->max_health;
